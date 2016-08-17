@@ -1,0 +1,37 @@
+<manifest
+    package="feicuiedu.com.videonews"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!--
+    AllowBackup : 6.0新特性，让App数据可以自动在云端备份，需Google Service；
+    GoogleAppIndexingWarning : 至少有一个Activity能处理ACTION-VIEW，让你的app能被Google搜索到；
+    So sorry that we can't use these features!
+    -->
+    <application
+        android:name=".VideoNewsApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.comments.CommentsActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>
